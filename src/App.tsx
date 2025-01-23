@@ -206,7 +206,7 @@ const App: React.FC = () => {
         </Card>
       </div>
       <div className="mt-8 col-span-2">
-        <Card title="Difference Log">
+        <Card title="Event Log">
           <Table<logType>
             columns={columns}
             dataSource={[...logArray]}
