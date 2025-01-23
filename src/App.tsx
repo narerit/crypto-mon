@@ -23,6 +23,7 @@ const columns: TableColumnsType<logType> = [
     title: "Count",
     dataIndex: "key",
     width: 100,
+    fixed: "left",
   },
   {
     title: "Binance Price",
@@ -149,11 +150,15 @@ const App: React.FC = () => {
     "https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg";
   const aeroDromeUrl = "https://aero.drome.eth.limo/brand-kit/token.svg";
   return (
-    <div className="grid grid-cols-2">
-      <div className="mt-8">
-        <Card title="CEX vs DEX Difference" className="h-46" extra={different}>
-          <div className="grid grid-cols-2">
-            <div className="flex items-center gap-2">
+    <div className="grid ml-6 lg:ml-8 lg:mr-8 lg:grid-cols-2">
+      <div className="mt-8 lg:col-span-1">
+        <Card
+          title="CEX vs DEX Difference"
+          className="w-96 lg:w-full lg:h-46"
+          extra={different}
+        >
+          <div className="grid lg:grid-cols-2">
+            <div className="flex items-center gap-2 xs:gap-4">
               <Avatar
                 src={<img src={binanceUrl} alt="avatar" sizes="large" />}
               />
@@ -177,15 +182,15 @@ const App: React.FC = () => {
           </div>
         </Card>
       </div>
-      <div className="ml-8 mt-8">
-        <Card title="Monitoring Config" className="h-46">
+      <div className="lg:ml-8 mt-8 lg:col-span-1">
+        <Card title="Monitoring Config" className="w-96 lg:w-full lg:h-46">
           <Form
             layout={"vertical"}
             initialValues={{ minDiff: 1.0, maxDiff: 2.0 }}
             form={form}
             style={{ maxWidth: 600 }}
           >
-            <div className="flex gap-4">
+            <div className="grid lg:flex gap-4">
               <Form.Item label="Difference threshold (min.)" name="minDiff">
                 <InputNumber
                   precision={2}
@@ -210,13 +215,13 @@ const App: React.FC = () => {
           </Form>
         </Card>
       </div>
-      <div className="mt-8 col-span-2">
-        <Card title="Event Log">
+      <div className="mt-8 lg:col-span-2">
+        <Card title="Event Log" className="w-96 lg:w-full">
           <Table<logType>
             columns={columns}
             dataSource={[...logArray]}
             pagination={{ pageSize: 50 }}
-            scroll={{ y: 55 * 5 }}
+            scroll={{ x: "max-content" }}
           />
         </Card>
       </div>
