@@ -1,5 +1,5 @@
 import "./App.css";
-import { Card, Form, InputNumber, Statistic } from "antd";
+import { Avatar, Card, Form, InputNumber, Statistic } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import type { TableColumnsType } from "antd";
 import { Table } from "antd";
@@ -153,14 +153,35 @@ const App: React.FC = () => {
       suffix="%"
     />
   );
-
+  const binanceUrl =
+    "https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg";
+  const aeroDromeUrl = "https://aero.drome.eth.limo/brand-kit/token.svg";
   return (
     <div className="grid grid-cols-2">
       <div className="mt-8">
-        <Card title="BTC/USDC Difference" className="h-46" extra={different}>
+        <Card title="CEX vs DEX Difference" className="h-46" extra={different}>
           <div className="grid grid-cols-2">
-            <Statistic title="Binance" value={binancePrice} precision={2} />
-            <Statistic title="Aerodrome" value={aerodromePrice} precision={2} />
+            <div className="flex items-center gap-2">
+              <Avatar
+                src={<img src={binanceUrl} alt="avatar" sizes="large" />}
+              />
+              <Statistic
+                title="Binance (BTC/USD)"
+                value={binancePrice}
+                precision={2}
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              {" "}
+              <Avatar
+                src={<img src={aeroDromeUrl} alt="avatar" sizes="large" />}
+              />
+              <Statistic
+                title="Aerodrome (CBTC/USDC)"
+                value={aerodromePrice}
+                precision={2}
+              />
+            </div>
           </div>
         </Card>
       </div>
