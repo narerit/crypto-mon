@@ -177,7 +177,7 @@ const App: React.FC = () => {
                 src={<img src={aeroDromeUrl} alt="avatar" sizes="large" />}
               />
               <Statistic
-                title="Aerodrome (CBTC/USDC)"
+                title="Aerodrome (cbBTC/USDC)"
                 value={aerodromePrice}
                 precision={2}
               />
