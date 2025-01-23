@@ -20,6 +20,11 @@ interface logType {
 }
 const columns: TableColumnsType<logType> = [
   {
+    title: "Count",
+    dataIndex: "key",
+    width: 100,
+  },
+  {
     title: "Binance Price",
     dataIndex: "binance",
     width: 150,
@@ -47,7 +52,7 @@ const columns: TableColumnsType<logType> = [
 
 const logArray: Array<logType> = [];
 let logFlag: boolean = true;
-let nextId = 0;
+let nextId = 1;
 let aerodromePrice: number = 0.0;
 const wallet = "0x4e962BB3889Bf030368F56810A9c96B83CB3E778";
 const url =
