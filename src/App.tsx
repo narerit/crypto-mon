@@ -5,6 +5,7 @@ import type { TableColumnsType } from "antd";
 import { Table } from "antd";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import dayjs from "dayjs";
 interface BinanceRes {
   s: string;
   p: string;
@@ -105,14 +106,7 @@ const App: React.FC = () => {
         aerodrome: aerodromePrice.toFixed(2),
         difference: absDiff.toFixed(2) + "%",
         event: "Difference above maximum threshold.",
-        timeStamp:
-          new Date().toLocaleDateString() +
-          " " +
-          new Date().getHours().toString() +
-          ":" +
-          new Date().getMinutes().toString() +
-          ":" +
-          new Date().getUTCSeconds().toString(),
+        timeStamp: dayjs().format().replace("T", " ").split("+")[0],
       };
       logArray.splice(0, 0, data);
       logFlag = true;
@@ -123,14 +117,7 @@ const App: React.FC = () => {
         aerodrome: aerodromePrice.toFixed(2),
         difference: absDiff.toFixed(2) + "%",
         event: "Difference under minimum threshold.",
-        timeStamp:
-          new Date().toLocaleDateString() +
-          " " +
-          new Date().getHours().toString() +
-          ":" +
-          new Date().getMinutes().toString() +
-          ":" +
-          new Date().getUTCSeconds().toString(),
+        timeStamp: dayjs().format().replace("T", " ").split("+")[0],
       };
       logArray.splice(0, 0, data);
       logFlag = false;
