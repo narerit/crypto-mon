@@ -172,7 +172,7 @@ const App: React.FC = () => {
             form={form}
             style={{ maxWidth: 600 }}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="flex gap-4">
               <Form.Item label="Difference threshold (min.)" name="minDiff">
                 <InputNumber
                   precision={2}
@@ -180,7 +180,7 @@ const App: React.FC = () => {
                   min={0}
                   placeholder="0"
                   suffix="%"
-                  style={{ width: "fit-content" }}
+                  style={{ width: "max-content" }}
                 />
               </Form.Item>
               <Form.Item label="Difference threshold (max.)" name="maxDiff">
