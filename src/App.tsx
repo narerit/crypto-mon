@@ -22,7 +22,7 @@ const columns: TableColumnsType<logType> = [
   {
     title: "Count",
     dataIndex: "key",
-    width: 100,
+    width: 20,
     fixed: "left",
   },
   {
@@ -154,11 +154,11 @@ const App: React.FC = () => {
       <div className="mt-8 lg:col-span-1">
         <Card
           title="CEX vs DEX Difference"
-          className="w-96 lg:w-full lg:h-46"
+          className="w-80 lg:w-full lg:h-46"
           extra={different}
         >
           <div className="grid lg:grid-cols-2">
-            <div className="flex items-center gap-2 xs:gap-4">
+            <div className="flex items-center gap-2 pb-6 lg:pb-0">
               <Avatar
                 src={<img src={binanceUrl} alt="avatar" sizes="large" />}
               />
@@ -169,7 +169,6 @@ const App: React.FC = () => {
               />
             </div>
             <div className="flex items-center gap-2">
-              {" "}
               <Avatar
                 src={<img src={aeroDromeUrl} alt="avatar" sizes="large" />}
               />
@@ -183,7 +182,7 @@ const App: React.FC = () => {
         </Card>
       </div>
       <div className="lg:ml-8 mt-8 lg:col-span-1">
-        <Card title="Monitoring Config" className="w-96 lg:w-full lg:h-46">
+        <Card title="Monitoring Config" className="w-80 lg:w-full lg:h-46">
           <Form
             layout={"vertical"}
             initialValues={{ minDiff: 1.0, maxDiff: 2.0 }}
@@ -216,7 +215,7 @@ const App: React.FC = () => {
         </Card>
       </div>
       <div className="mt-8 lg:col-span-2">
-        <Card title="Event Log" className="w-96 lg:w-full">
+        <Card title="Event Log" className="w-80 lg:w-full">
           <Table<logType>
             columns={columns}
             dataSource={[...logArray]}
