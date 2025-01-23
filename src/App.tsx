@@ -150,7 +150,7 @@ const App: React.FC = () => {
     "https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg";
   const aeroDromeUrl = "https://aero.drome.eth.limo/brand-kit/token.svg";
   return (
-    <div className="grid ml-6 lg:ml-8 lg:mr-8 lg:grid-cols-2">
+    <div className="grid ml-6 mr-6 xl:ml-40 xl:mr-40 lg:grid-cols-2">
       <div className="mt-8 lg:col-span-1">
         <Card
           title="CEX vs DEX Difference"
