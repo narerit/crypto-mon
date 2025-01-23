@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button, Card, Form, InputNumber, Statistic } from "antd";
+import { Card, Form, InputNumber, Statistic } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import type { TableColumnsType } from "antd";
 import { Table } from "antd";
