@@ -163,7 +163,7 @@ const App: React.FC = () => {
                 src={<img src={binanceUrl} alt="avatar" sizes="large" />}
               />
               <Statistic
-                title="Binance (BTC/USD)"
+                title="Binance (BTC/USDC)"
                 value={binancePrice}
                 precision={2}
               />
